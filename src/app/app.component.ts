@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     this.store.dispatch(loadModelos());
     this.servicioModelos.obtenerModelos().subscribe((response)=>{
       this.store.dispatch(loadedModelos({
-        item:response
+        items:response
       }));
     })
   }

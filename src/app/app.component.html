@@ -1,5 +1,4 @@
 <div>
-  Hola {{title}}
   <b *ngIf="(loading$ | async)" > Cargando... </b>
   <app-item *ngIf="!(loading$ | async)" ></app-item>
 </div>

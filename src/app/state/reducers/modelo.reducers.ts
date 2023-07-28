@@ -14,11 +14,11 @@ export const modelosReducer=createReducer(
             ...state, loading:true
         };
     }),
-    on(loadedModelos,(state, {item})=>{
+    on(loadedModelos,(state, {items})=>{
         return{
             ...state, 
             loading:false, 
-            item
+            items
         };
     })
 )

@@ -12,12 +12,13 @@ import { selectItems } from 'src/app/state/selectors/modelo.selectors';
 })
 export class ItemComponent implements OnInit {
 
-  items$:Observable<readonly Modelo[]>=new Observable();
+  items$:Observable<Modelo[]>=new Observable();
 
   constructor(private store:Store<AppState>){
 
   }
   ngOnInit(): void {
+    //@ts-ignore
     this.items$=this.store.select(selectItems);
     console.log('asignados!')
   }
