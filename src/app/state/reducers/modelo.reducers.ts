@@ -1,6 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { Modelo } from "src/app/models/modelo.interface";
-import { loadModelos } from "../actions/modelo.actions";
+import { loadModelos, loadedModelos } from "../actions/modelo.actions";
 import { ModeloState } from "src/app/models/modelo.state";
 export const initialState:
 ModeloState={
@@ -13,6 +12,13 @@ export const modelosReducer=createReducer(
     on(loadModelos,(state)=>{
         return{
             ...state, loading:true
+        };
+    }),
+    on(loadedModelos,(state, {item})=>{
+        return{
+            ...state, 
+            loading:false, 
+            item
         };
     })
 )

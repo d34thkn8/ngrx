@@ -7,10 +7,12 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { modelosReducer } from './state/reducers/modelo.reducers';
 import { ROOT_REDUCERS } from './state/app.state';
+import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
