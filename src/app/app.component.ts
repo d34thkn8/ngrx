@@ -21,10 +21,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.loading$=this.store.select(selectLoading)
     this.store.dispatch(loadModelos());
-    this.servicioModelos.obtenerModelos().subscribe((response)=>{
-      this.store.dispatch(loadedModelos({
-        items:response
-      }));
-    })
+    
   }
 }

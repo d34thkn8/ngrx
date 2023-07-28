@@ -8,6 +8,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { modelosReducer } from './state/reducers/modelo.reducers';
 import { ROOT_REDUCERS } from './state/app.state';
 import { ItemComponent } from './components/item/item.component';
+import { EffectsModule } from '@ngrx/effects';
+import { ModelosEffects } from './state/effects/modelos.effects';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { ItemComponent } from './components/item/item.component';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(ROOT_REDUCERS, {}),
-    StoreDevtoolsModule.instrument({ name:'Prueba' , maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({ name:'Prueba' , maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([ModelosEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
